@@ -14,11 +14,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.List;
 
 @RequestMapping("v1/")
 @RestController
+@EnableSwagger2
 @Slf4j
 public class LibraryController {
 
@@ -26,13 +28,13 @@ public class LibraryController {
     private LibraryService libraryService;
 
     @GetMapping("library/books")
-    ResponseEntity<LibraryServiceResponse<List<BookResponse>>> getALlBooks(){
+    ResponseEntity<LibraryServiceResponse<List<BookResponse>>> getAllBooks(){
         LibraryServiceResponse<List<BookResponse>>  allBooksResponse = libraryService.getAllBooks();
     return new ResponseEntity<>(allBooksResponse, HttpStatus.OK);
     }
 
     @GetMapping("library/books/{book_id}")
-    ResponseEntity<LibraryServiceResponse<BookResponse>> getALlBooks(@PathVariable("book_id") Integer bookId){
+    ResponseEntity<LibraryServiceResponse<BookResponse>> getBookDetails(@PathVariable("book_id") Integer bookId){
         LibraryServiceResponse<BookResponse> allBooksResponse = libraryService.getBookDetails(bookId);
         return new ResponseEntity<>(allBooksResponse, HttpStatus.OK);
     }
