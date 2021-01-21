@@ -5,6 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
+/**
+ * Repository for managing Library entity.
+ */
 public interface LibraryRepository extends JpaRepository<Library, Integer> {
 
     long deleteByBookId(Integer bookId);
