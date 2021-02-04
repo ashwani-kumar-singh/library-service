@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient("user-service")
+@FeignClient("USER-SERVICE")
 public interface UserServiceClient {
 
     @GetMapping(value = "v1/users/")
