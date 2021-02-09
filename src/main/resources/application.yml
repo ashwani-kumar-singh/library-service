@@ -3,4 +3,4 @@ server:
 
 spring:
   application:
-    name: LIBRARY-SERVICE
+    name: library-service
