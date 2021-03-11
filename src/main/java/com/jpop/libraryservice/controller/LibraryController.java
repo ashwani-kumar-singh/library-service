@@ -29,6 +29,7 @@ import java.util.List;
 @RestController
 @EnableSwagger2
 @Slf4j
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class LibraryController {
 
     @Autowired
